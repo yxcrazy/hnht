@@ -51,8 +51,8 @@
             var en_name=document.getElementById("en_iname").value;
             var position=document.getElementById("iposition").value;
             var en_position=document.getElementById("en_iposition").value;
-           var company=document.getElementById("icompany").value;
-            var en_company=document.getElementById("en_icompany").value;
+            // var company=document.getElementById("icompany").value;
+            // var en_company=document.getElementById("en_icompany").value;
            var add=document.getElementById("iadd").value;
             var en_add=document.getElementById("en_iadd").value;
             var tel1=document.getElementById("itel1").value;
@@ -62,7 +62,7 @@
             var zip=document.getElementById("izip").value;
             var mob=document.getElementById("imob").value;
 
-            if(name=="" || en_name=="" || position=="" || en_position=="" ||tel1=="" || tel2==""|| zip=="" || mob=="" || add=="" || en_add=="" || tcompany==""||en_tcompany==""){
+            if(name=="" || en_name=="" || position=="" || en_position=="" ||tel1=="" || tel2==""|| zip=="" || mob=="" || add=="" || en_add=="" ){
                 alert("表单不能为空");
                 return ;
             }
@@ -71,8 +71,8 @@
             var en_tname=document.getElementById("en_tname");
             var tposition=document.getElementById("tposition");
             var en_tposition=document.getElementById("en_tposition");
-            var tcompany=document.getElementById("tcompany");
-            var en_tcompany=document.getElementById("en_tcompany");
+            // var tcompany=document.getElementById("tcompany");
+            // var en_tcompany=document.getElementById("en_tcompany");
             var tadd=document.getElementById("tadd");
             var en_tadd=document.getElementById("en_tadd");
             var ttel1=document.getElementById("ttel1");
@@ -86,8 +86,8 @@
             tposition.innerHTML=position;
             en_tposition.innerHTML=en_position;
             en_tname.innerHTML=en_name;
-            tcompany.innerHTML=company;
-            en_tcompany.innerHTML=en_company;
+            // tcompany.innerHTML=company;
+            // en_tcompany.innerHTML=en_company;
             tadd.innerHTML=add;
             en_tadd.innerHTML=en_add;
             ttel1.innerHTML=tel1;
@@ -201,7 +201,7 @@
     <div class="Fill">
         <div class="FillBox">
             <h3>1.填写信息：</h3>
-            <div id="company"><h5>填写分公司名称：</h5><input onclick='del(this)' class="fillinput" id="icompany" placeholder="填写分公司名称" /><input onclick='del(this)' class="fillinput" id="en_icompany" placeholder="填写对应分公司英文名称" /></div>
+<!--            <div id="company"><h5>填写分公司名称：</h5><input onclick='del(this)' class="fillinput" id="icompany" placeholder="填写分公司名称" /><input onclick='del(this)' class="fillinput" id="en_icompany" placeholder="填写对应分公司英文名称" /></div>-->
             <div id="name"><h5>姓名：</h5><input  name="tname" class="fillinput" onclick='del(this)' id="iname" placeholder="请填入您的姓名" /><input class="fillinput" onclick='del(this)' id="en_iname"  placeholder="请填入您对应的英文姓名" /></div>
 
             <div id="position"><h5>职位：</h5><input name="pos" class="fillinput" onclick='del(this)' id="iposition" placeholder="请填入您的职位" />&nbsp;&nbsp;<input class="fillinput" onclick='del(this)' id="en_iposition" placeholder="请输入对应的英文职位" /></div>
