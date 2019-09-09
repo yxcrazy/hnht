@@ -51,7 +51,8 @@
             var en_name=document.getElementById("en_iname").value;
             var position=document.getElementById("iposition").value;
             var en_position=document.getElementById("en_iposition").value;
-           // var company=document.getElementById("icompany").value;
+           var company=document.getElementById("icompany").value;
+            var en_company=document.getElementById("en_icompany").value;
            var add=document.getElementById("iadd").value;
             var en_add=document.getElementById("en_iadd").value;
             var tel1=document.getElementById("itel1").value;
@@ -61,7 +62,7 @@
             var zip=document.getElementById("izip").value;
             var mob=document.getElementById("imob").value;
 
-            if(name=="" || en_name=="" || position=="" || en_position=="" ||tel1=="" || tel2==""|| zip=="" || mob=="" || add=="" || en_add==""){
+            if(name=="" || en_name=="" || position=="" || en_position=="" ||tel1=="" || tel2==""|| zip=="" || mob=="" || add=="" || en_add=="" || tcompany==""||en_tcompany==""){
                 alert("表单不能为空");
                 return ;
             }
@@ -70,7 +71,8 @@
             var en_tname=document.getElementById("en_tname");
             var tposition=document.getElementById("tposition");
             var en_tposition=document.getElementById("en_tposition");
-            //var tcompany=document.getElementById("tcompany");
+            var tcompany=document.getElementById("tcompany");
+            var en_tcompany=document.getElementById("en_tcompany");
             var tadd=document.getElementById("tadd");
             var en_tadd=document.getElementById("en_tadd");
             var ttel1=document.getElementById("ttel1");
@@ -84,7 +86,8 @@
             tposition.innerHTML=position;
             en_tposition.innerHTML=en_position;
             en_tname.innerHTML=en_name;
-            //tcompany.innerHTML=company;
+            tcompany.innerHTML=company;
+            en_tcompany.innerHTML=en_company;
             tadd.innerHTML=add;
             en_tadd.innerHTML=en_add;
             ttel1.innerHTML=tel1;
@@ -198,10 +201,11 @@
     <div class="Fill">
         <div class="FillBox">
             <h3>1.填写信息：</h3>
+            <div id="company"><h5>填写分公司名称：</h5><input onclick='del(this)' class="fillinput" id="icompany" placeholder="填写分公司名称" /><input onclick='del(this)' class="fillinput" id="en_icompany" placeholder="填写对应分公司英文名称" /></div>
             <div id="name"><h5>姓名：</h5><input  name="tname" class="fillinput" onclick='del(this)' id="iname" placeholder="请填入您的姓名" /><input class="fillinput" onclick='del(this)' id="en_iname"  placeholder="请填入您对应的英文姓名" /></div>
 
             <div id="position"><h5>职位：</h5><input name="pos" class="fillinput" onclick='del(this)' id="iposition" placeholder="请填入您的职位" />&nbsp;&nbsp;<input class="fillinput" onclick='del(this)' id="en_iposition" placeholder="请输入对应的英文职位" /></div>
-<!--            <div id="company"><h5>填写分公司名称/或部门名称：</h5><input onclick='del(this)' class="fillinput" id="icompany" value="填写分公司名称/或部门名称" /></div>-->
+
 <!--            <div id="add"><h5>地址：</h5><input class="fillinput" onclick='del(this)' id="iadd" value="公司详细地址" /></div>-->
 
             <div id="tel"><h5>电话：</h5><input name="phone" class="fillinput" onclick='del(this)' id="itel1" placeholder="区号" />-<input class="fillinput"  onclick='del(this)'  id="itel2" placeholder="填写您的电话号码" /></div>
@@ -224,7 +228,7 @@
             <h3>2.确认效果</h3>
             <div id="code">
                 <style>#main{width:720px;font-family:"黑体";overflow:hidden;font-size:10px}#main span{border:0}#main .en{font-family:Arial;.logo img font-size:10px}#main .en_title{font-size:10px;font-weight:bold;margin:0}#main .tname{font-size:12px}#main .left{float:left;width:400px}#main .title{font-size:12px;font-weight:bold;margin:2px 0}#main .logo img{width:40px;height:20px}#main .logo{width:100%;margin:12px 0}#main .left_main{margin-top:7px}#main .left .left_main p{line-height:16px;margin:0}#main .right{float:right;width:320px}#main #right_footer{border-top:1px solid black;border-bottom:1px solid black}#main .phone{line-height:14px;text-align:center;margin:0}#main .phone img{width:14px;height:14px}#main .phone i{font-family:"微软雅黑";font-style:normal;margin-left:4px}#main .code{text-align:center;margin:2px 0}#main .code img{width:55px;height:55px}#main #right_footer{overflow:hidden;margin-top:5px;font-size:8px;line-height:14px}#main .weixin{float:left;margin-left:10px;width:50%;margin:3px 0}#main .weibo{float:right;margin-right:10px;width:50%;margin:3px 0}#main .weibo a{color:#000;display:block;float:right}#main .right_center{text-align:center;line-height:12px;margin:2px 0}#main .weixin img{width:26px;height:26px;float:left;margin-right:3px}#main .weibo img{float:left;width:26px;height:26px;margin-right:3px}</style>
-                <div id="main"><p class="logo"><img src="https://exmail.qq.com/cgi-bin/viewfile?type=signature&picid=ZX1215-VH%7EEB_FQ7rXhMx5De4XvO9k&uin=761001515" alt=""></p><div class="left"><p class="title">华天国际酒店管理有限公司</p><p class="en en_title">Huatian International Hotel Management Co., Ltd.</p><div class="left_main"><p class="tname"><b><t id="ttname">姓名</t></b> |  <t id="tposition">职位</t></p><p class="en"><t id="en_tname">Helen Wei</t> |  <t id="en_tposition">Director of Sales and Marketing</t></p><p>电话(Tel)：<t id="ttel1">区号</t>-<t id="ttel2">号码</t></p><p>手机(Mob)：<t id="tmob">手机号码</t></p><p>电邮(E-mail)：<t id="tzip">xxxx@xx.xxx</t></p><p>地址：<t id="tadd">中国湖南省长沙市解放东路300号</t></p><p class="en">Address: <t id="en_tadd">300 E. Jiefang Rd., Changsha, Hunan, China</t></p></div></div><div class="right"><p class="phone"><img src="https://exmail.qq.com/cgi-bin/viewfile?type=signature&picid=ZX1515-_9TSjHrY7rXhVXglOkZGL9k&uin=761001515" alt=""><i>400-820-0428</i></p><p class="code"><img src="https://exmail.qq.com/cgi-bin/viewfile?type=signature&picid=ZX1515-Fj3MV6EAXQZSORRJ6ER8T9k&uin=761001515" alt=""></p><p class="right_center">扫一扫关注我们</p><p class="right_center"><b>加入“华开天下贵宾会”</b></p><p class="right_center">网址:http://www.huatian-hotel.com</p><div id="right_footer"><div class="weixin"><img src="https://exmail.qq.com/cgi-bin/viewfile?type=signature&picid=ZX1215-i6C1VaMBaDNnf1IPUEgfY9k&uin=761001515" alt=""><span>关注华天酒店集团微信<br/>预定酒店.尊享更多优惠</span></div><div class="weibo"><a href="https://weibo.com/hnhuatianhotel?is_all=1" style="text-decoration:none;color:#000;"><img src="https://exmail.qq.com/cgi-bin/viewfile?type=signature&picid=ZX1215-2PP9HuhKbjVhSWQ5Yfr9P9k&uin=761001515" alt=""><span style="color:#000;">关注华天酒店集团微博<br />分享您的度假生活</span></a></div></div></div></div>
+                <div id="main"><p class="logo"><img src="https://exmail.qq.com/cgi-bin/viewfile?type=signature&picid=ZX1215-VH%7EEB_FQ7rXhMx5De4XvO9k&uin=761001515" alt=""></p><div class="left"><p class="title"><t id="tcompany">华天国际酒店管理有限公司</t></p><p class="en en_title"><t id="en_tcompany">Huatian International Hotel Management Co., Ltd.</t></p><div class="left_main"><p class="tname"><b><t id="ttname">姓名</t></b> |  <t id="tposition">职位</t></p><p class="en"><t id="en_tname">Helen Wei</t> |  <t id="en_tposition">Director of Sales and Marketing</t></p><p>电话(Tel)：<t id="ttel1">区号</t>-<t id="ttel2">号码</t></p><p>手机(Mob)：<t id="tmob">手机号码</t></p><p>电邮(E-mail)：<t id="tzip">xxxx@xx.xxx</t></p><p>地址：<t id="tadd">中国湖南省长沙市解放东路300号</t></p><p class="en">Address: <t id="en_tadd">300 E. Jiefang Rd., Changsha, Hunan, China</t></p></div></div><div class="right"><p class="phone"><img src="https://exmail.qq.com/cgi-bin/viewfile?type=signature&picid=ZX1515-_9TSjHrY7rXhVXglOkZGL9k&uin=761001515" alt=""><i>400-820-0428</i></p><p class="code"><img src="https://exmail.qq.com/cgi-bin/viewfile?type=signature&picid=ZX1515-Fj3MV6EAXQZSORRJ6ER8T9k&uin=761001515" alt=""></p><p class="right_center">扫一扫关注我们</p><p class="right_center"><b>加入“华开天下贵宾会”</b></p><p class="right_center">网址:http://www.huatian-hotel.com</p><div id="right_footer"><div class="weixin"><img src="https://exmail.qq.com/cgi-bin/viewfile?type=signature&picid=ZX1215-i6C1VaMBaDNnf1IPUEgfY9k&uin=761001515" alt=""><span>关注华天酒店集团微信<br/>预定酒店.尊享更多优惠</span></div><div class="weibo"><a href="https://weibo.com/hnhuatianhotel?is_all=1" style="text-decoration:none;color:#000;"><img src="https://exmail.qq.com/cgi-bin/viewfile?type=signature&picid=ZX1215-2PP9HuhKbjVhSWQ5Yfr9P9k&uin=761001515" alt=""><span style="color:#000;">关注华天酒店集团微博<br />分享您的度假生活</span></a></div></div></div></div>
             </div>
         </div>
     </div>
